@@ -58,8 +58,13 @@ if ( ! class_exists( 'HTScript_Notices' ) ){
          */
         public function ajax_dismiss() {
 
-            $nonce = !empty( $_POST['notice_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['notice_nonce'] ) ) : '';
+            // Check if the user has permission to perform this action
+            if ( ! current_user_can( 'manage_options' ) ) {
+                wp_send_json_error( [ 'message' => __( 'Unauthorized action.', 'ihafs' ) ] );
+                wp_die();
+            }
 
+            $nonce = !empty( $_POST['notice_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['notice_nonce'] ) ) : '';
             if( !wp_verify_nonce( $nonce, 'htscript_notices_nonce') ) {
                 $error_message = [
                     'message'  => __('Are you cheating?', 'ihafs')
@@ -67,10 +72,21 @@ if ( ! class_exists( 'HTScript_Notices' ) ){
                 wp_send_json_error( $error_message );
             }
 
+            // Define allowed options
+            $allowed_options = [
+                'hastech-notice-id-ihafs-rating-notice',
+            ];
+
             $notice_id   = ( isset( $_POST['noticeid'] ) ) ? sanitize_key( $_POST['noticeid'] ) : '';
             $alreadydid  = ( isset( $_POST['alreadydid'] ) ) ? sanitize_key( $_POST['alreadydid'] ) : '';
             $expire_time = ( isset( $_POST['expiretime'] ) ) ? sanitize_text_field( wp_unslash( $_POST['expiretime'] ) ) : '';
             $close_by    = ( isset( $_POST['closeby'] ) ) ? sanitize_key( $_POST['closeby'] ) : '';
+
+            // Ensure the option being updated is in the allowed list
+            if ( ! in_array( $notice_id, $allowed_options, true ) ) {
+                wp_send_json_error( [ 'message' => __( 'Invalid option.', 'ihafs' ) ] );
+                wp_die();
+            }
 
             if ( ! empty( $notice_id ) ) {
 
@@ -167,8 +183,10 @@ if ( ! class_exists( 'HTScript_Notices' ) ){
             });";
             
             // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-            printf( '<style>%s</style>', $styles );
-            printf( '<script>%s</script>', $scripts );
+            if(current_user_can( 'manage_options' ) ) {
+                printf( '<style>%s</style>', $styles );
+                printf( '<script>%s</script>', $scripts );
+            }
         }
 
         /**

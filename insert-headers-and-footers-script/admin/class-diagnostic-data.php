@@ -96,6 +96,13 @@ if ( ! class_exists( 'HTScript_Diagnostic_Data' ) ) {
 
 
             add_action( 'wp_ajax_ihafs_diagnostic_data', function () {
+
+                // Check if the user has permission to perform this action
+                if ( ! current_user_can( 'manage_options' ) ) {
+                    wp_send_json_error( [ 'message' => __( 'Unauthorized action.', 'ihafs' ) ] );
+                    wp_die();
+                }
+
                 check_ajax_referer( 'ihafs-diagnostic-data-ajax-request' );
                 $agreed = isset( $_POST['agreed'] ) ? sanitize_key( $_POST['agreed'] ) : '' ;
                 if( $agreed === 'yes' ){
@@ -107,6 +114,11 @@ if ( ! class_exists( 'HTScript_Diagnostic_Data' ) ) {
 
             add_action('init', function () {
                 if (isset($_GET['action']) && $_GET['action'] === 'ihafs_diagnostic_data' && isset($_GET['_wpnonce'])) {
+                    // Check if the user has permission to perform this action
+                    if ( ! current_user_can( 'manage_options' ) ) {
+                        wp_send_json_error( [ 'message' => __( 'Unauthorized action.', 'ihafs' ) ] );
+                        wp_die();
+                    }
                     check_ajax_referer( 'ihafs-diagnostic-data-ajax-request' );
                     $agreed = isset( $_GET['ihafs_diagnostic_data_agreed'] ) ? sanitize_key( $_GET['ihafs_diagnostic_data_agreed'] ) : '';
                     if( $agreed === '1' ){
