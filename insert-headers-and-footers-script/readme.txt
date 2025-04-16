@@ -3,8 +3,8 @@ Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasi
 Tags: Google Analytics,  inject code, inject html, inject javascript, Facebook pixel
 Author URI: https://hasthemes.com/
 Requires at least: 5.0
-Tested up to: 6.7
-Stable tag: 1.1.3
+Tested up to: 6.8
+Stable tag: 1.1.4
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
@@ -76,6 +76,9 @@ Needs assistance to use this plugin?
 Feel free to [Contact us](https://hasthemes.com/contact-us/)
 
 == Changelog ==
+
+= Version: 1.1.4 - Date: 16 April 2025 =
+* Added: Compatibility with the latest WordPress version.
 
 = Version: 1.1.3 - Date: 25 March 2025 =
 * Updated: User permission checks for better role-based access control in AJAX handling.
