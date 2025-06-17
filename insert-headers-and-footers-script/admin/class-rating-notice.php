@@ -184,8 +184,8 @@ if ( ! class_exists( 'HTScript_Notices' ) ){
             
             // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             if(current_user_can( 'manage_options' ) ) {
-                printf( '<style>%s</style>', $styles );
-                printf( '<script>%s</script>', $scripts );
+                printf( '<style>%s</style>', $styles ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                printf( '<script>%s</script>', $scripts ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             }
         }
 
@@ -350,14 +350,14 @@ if ( ! class_exists( 'HTScript_Notices' ) ){
 
                         // Notice Message
                         if( $notice_arg['message_type'] === 'text'){
-                            printf('<p>%1$s</p>', __( $notice_arg['message'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            printf('<p>%1$s</p>', esc_html( $notice_arg['message'] ) );
                         }else{
-                            echo wp_kses_post( $notice_arg['message'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            echo wp_kses_post( $notice_arg['message'] );
                         }
 
                         // If notice type custom and dismissible true
                         if ( true === $notice_arg['dismissible'] ) {
-                            printf('%1$s', __( $notice_arg['dismissible_btn'] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            printf('%1$s', esc_html( $notice_arg['dismissible_btn'] ) );
                         }
 
                         // Notice Action Button

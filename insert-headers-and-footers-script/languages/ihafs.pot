@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Insert Headers and Footers Script\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-16 09:22+0000\n"
+"POT-Creation-Date: 2025-06-17 11:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -14,6 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.3.0; wp-5.2.1"
+
+#. %s: Number of installations.
+#: admin/recommended-plugins/class.recommended-plugins.php:300
+#, php-format
+msgid "%s Active Installations"
+msgstr ""
 
 #: admin/recommended-plugins/class.recommended-plugins.php:245
 msgid "Activate"
@@ -30,6 +36,20 @@ msgstr ""
 
 #: inc/metabox.php:61
 msgid "Active"
+msgstr ""
+
+#. %s: Number of millions.
+#: admin/recommended-plugins/class.recommended-plugins.php:374
+#, php-format
+msgctxt "Active plugin installations"
+msgid "%s+ Million"
+msgid_plural "%s+ Million"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/recommended-plugins/class.recommended-plugins.php:378
+msgctxt "Active plugin installations"
+msgid "Less Than 10"
 msgstr ""
 
 #: inc/metabox.php:64
@@ -50,7 +70,12 @@ msgstr ""
 msgid "All Scripts"
 msgstr ""
 
-#: admin/class-rating-notice.php:65
+#: inc/custom-posts.php:9
+msgctxt "All Scripts"
+msgid "All Scripts"
+msgstr ""
+
+#: admin/class-rating-notice.php:70
 msgid "Are you cheating?"
 msgstr ""
 
@@ -66,7 +91,7 @@ msgstr ""
 #. %3$s: strong tag end
 #. %4$s: a tag start
 #. %5$s: a tag end
-#: admin/class-diagnostic-data.php:515
+#: admin/class-diagnostic-data.php:527
 #, php-format
 msgid ""
 "At %2$s%1$s%3$s, we prioritize continuous improvement and compatibility. To "
@@ -110,7 +135,7 @@ msgid ""
 "addition to its basic features."
 msgstr ""
 
-#: admin/class-diagnostic-data.php:525
+#: admin/class-diagnostic-data.php:537
 msgid "Count Me In"
 msgstr ""
 
@@ -122,7 +147,7 @@ msgstr ""
 msgid "DataCaptia"
 msgstr ""
 
-#: admin/class-rating-notice.php:244
+#: admin/class-rating-notice.php:262
 msgid "Dismiss this notice."
 msgstr ""
 
@@ -352,6 +377,10 @@ msgstr ""
 msgid "Installing.."
 msgstr ""
 
+#: admin/class-rating-notice.php:87
+msgid "Invalid option."
+msgstr ""
+
 #: admin/recommended-plugins/recommendations.php:104
 msgid "JustTables"
 msgstr ""
@@ -397,7 +426,7 @@ msgstr ""
 msgid "New Script"
 msgstr ""
 
-#: admin/class-diagnostic-data.php:528
+#: admin/class-diagnostic-data.php:540
 msgid "No, Thanks"
 msgstr ""
 
@@ -489,6 +518,11 @@ msgstr ""
 msgid "Script"
 msgstr ""
 
+#: inc/custom-posts.php:10
+msgctxt "Script"
+msgid "Script"
+msgstr ""
+
 #: inc/custom-posts.php:13
 msgid "Script Archives"
 msgstr ""
@@ -519,7 +553,7 @@ msgstr ""
 
 #. %1$s: a tag start
 #. %2$s: a tag end
-#: admin/class-diagnostic-data.php:522
+#: admin/class-diagnostic-data.php:534
 #, php-format
 msgid ""
 "Server information (Web server, PHP version, MySQL version), WordPress "
@@ -557,13 +591,18 @@ msgstr ""
 #. %1$s: project name
 #. %2$s: strong tag start
 #. %3$s: strong tag end
-#: admin/class-diagnostic-data.php:558
+#: admin/class-diagnostic-data.php:570
 #, php-format
 msgid "Thank you very much for supporting %2$s%1$s%3$s."
 msgstr ""
 
 #. Description of the plugin
 msgid "This plugin allow allow you to insert script in headers and footers"
+msgstr ""
+
+#: admin/class-rating-notice.php:63 admin/class-diagnostic-data.php:102
+#: admin/class-diagnostic-data.php:119
+msgid "Unauthorized action."
 msgstr ""
 
 #: inc/custom-posts.php:20
@@ -669,7 +708,7 @@ msgid "You May Also Like"
 msgstr ""
 
 #. %1$s: project name
-#: admin/class-diagnostic-data.php:535
+#: admin/class-diagnostic-data.php:547
 #, php-format
 msgid "🌟 Enhance Your %1$s Experience as a Valued Contributor!"
 msgstr ""

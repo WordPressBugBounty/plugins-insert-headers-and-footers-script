@@ -24,7 +24,7 @@ function ihafs_cmb2_render_select_multiple_field_type( $field, $escaped_value, $
 	}
 	$select_multiple .= '</select>';
 	$select_multiple .= $field_type_object->_desc( true );
-	echo $select_multiple; // WPCS: XSS ok.
+	echo $select_multiple; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 add_action( 'cmb2_render_select_multiple', 'ihafs_cmb2_render_select_multiple_field_type', 10, 5 );
 /**

@@ -4,7 +4,7 @@ Tags: Google Analytics,  inject code, inject html, inject javascript, Facebook p
 Author URI: https://hasthemes.com/
 Requires at least: 5.0
 Tested up to: 6.8
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
@@ -76,6 +76,10 @@ Needs assistance to use this plugin?
 Feel free to [Contact us](https://hasthemes.com/contact-us/)
 
 == Changelog ==
+
+= Version: 1.1.5 - Date: 17 June 2025 =
+* Fixed: Translation issues have been resolved in multiple areas.
+* Fixed: Escaping issues have been resolved in multiple areas.
 
 = Version: 1.1.4 - Date: 16 April 2025 =
 * Added: Compatibility with the latest WordPress version.

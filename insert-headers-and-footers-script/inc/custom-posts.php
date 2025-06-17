@@ -6,8 +6,8 @@
 function ihafs_custom_posts() {
 	// Headers and Footer Scripts
 	$labels = array(
-		'name'                  => _x( 'All Scripts', 'ihafs' ),
-		'singular_name'         => _x( 'Script', 'ihafs' ),
+		'name'                  => _x( 'All Scripts', 'All Scripts', 'ihafs' ),
+		'singular_name'         => _x( 'Script', 'Script', 'ihafs' ),
 		'menu_name'             => __( 'HT Script', 'ihafs' ),
 		'name_admin_bar'        => __( 'ihafs', 'ihafs' ),
 		'archives'              => __( 'Script Archives', 'ihafs' ),
