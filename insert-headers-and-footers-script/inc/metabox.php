@@ -4,14 +4,18 @@ function ihafs_post_list_arr($post_type = 'post', $per_page = 10){
 
 	$args = array(
 		'post_type' => $post_type,
-		'posts_per_page'	=> $per_page
+		'posts_per_page'	=> $per_page,
+		'no_found_rows' => true,
+		'fields' => 'ids',
 	);
 
 	$query = new WP_Query($args);
-	while($query->have_posts()){
-		$query->the_post();
-		$arr[get_the_id()] = get_the_title();
-	}
+	if ($query->have_posts()) {
+		$post_ids = $query->posts;
+		foreach ($post_ids as $post_id) {
+			$arr[$post_id] = get_the_title($post_id);
+		}
+	} 
 	wp_reset_postdata();
 
 	return $arr;
