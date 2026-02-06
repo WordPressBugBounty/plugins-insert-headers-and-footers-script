@@ -1,8 +1,9 @@
 <?php
 /**
  * Plugin Name: Insert Headers and Footers Code - HT Script
+ * Plugin URI: https://htplugins.com/
  * Description: This plugin allow allow you to insert script in headers and footers
- * Version: 1.1.6
+ * Version: 1.1.7
  * Author: HasThemes
  * Author URI: https://hasthemes.com/
  * Text Domain: ihafs
@@ -10,7 +11,7 @@
 */
 
 // define path
-define( 'IHAFS_VERSION', '1.1.6' );
+define( 'IHAFS_VERSION', '1.1.7' );
 define( 'IHAFS_URI', plugins_url('', __FILE__) );
 define( 'IHAFS_DIR', dirname( __FILE__ ) );
 
@@ -28,6 +29,7 @@ include_once( IHAFS_DIR. '/admin/functions.php');
 if(is_admin()){
 	include_once( IHAFS_DIR. '/admin/class-diagnostic-data.php');
 }
+
 add_action('init', function() {
 	if(is_admin()){
 		include_once( IHAFS_DIR. '/admin/recommended-plugins/recommendations.php');

@@ -45,12 +45,64 @@ function ihafs_custom_posts() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,		
+		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => false,
-		'capability_type'       => 'post',
+		'capability_type'       => array('ihafs_script', 'ihafs_scripts'),
+		'capabilities'          => array(
+			'edit_post'              => 'edit_ihafs_script',
+			'read_post'              => 'read_ihafs_script',
+			'delete_post'            => 'delete_ihafs_script',
+			'edit_posts'             => 'edit_ihafs_scripts',
+			'edit_others_posts'      => 'edit_others_ihafs_scripts',
+			'publish_posts'          => 'publish_ihafs_scripts',
+			'read_private_posts'     => 'read_private_ihafs_scripts',
+			'delete_posts'           => 'delete_ihafs_scripts',
+			'delete_private_posts'   => 'delete_private_ihafs_scripts',
+			'delete_published_posts' => 'delete_published_ihafs_scripts',
+			'delete_others_posts'    => 'delete_others_ihafs_scripts',
+			'edit_private_posts'     => 'edit_private_ihafs_scripts',
+			'edit_published_posts'   => 'edit_published_ihafs_scripts',
+			'create_posts'           => 'edit_ihafs_scripts',
+		),
+		'map_meta_cap'          => true,
 	);
 	register_post_type( 'ihafs_script', $args );
-	
+
 }
 add_action( 'init', 'ihafs_custom_posts');
+
+/**
+ * Grant custom ihafs_script capabilities to users with unfiltered_html
+ * Security fix for CVE-2025-12112
+ *
+ * This filter ensures that only users with unfiltered_html capability
+ * can manage scripts, preventing Authors from accessing the feature.
+ *
+ * The user_has_cap filter dynamically grants ihafs_script capabilities to users who have unfiltered_html:
+ * - Only Editors and Administrators can manage scripts (they have unfiltered_html by default)
+ * - Authors, Contributors, and Subscribers cannot access script management
+ * - WordPress handles all meta-to-primitive capability mapping, then we grant access based on unfiltered_html
+ */
+add_filter('user_has_cap', function($allcaps, $caps, $args, $user) {
+	// Check if any of the required capabilities are ihafs_script capabilities
+	$checking_ihafs = false;
+	foreach ($caps as $cap) {
+		if (strpos($cap, 'ihafs_script') !== false) {
+			$checking_ihafs = true;
+			break;
+		}
+	}
+
+	// If we're checking ihafs_script capabilities and user has unfiltered_html
+	if ($checking_ihafs && isset($allcaps['unfiltered_html']) && $allcaps['unfiltered_html']) {
+		// Grant all required ihafs_script capabilities
+		foreach ($caps as $cap) {
+			if (strpos($cap, 'ihafs_script') !== false) {
+				$allcaps[$cap] = true;
+			}
+		}
+	}
+
+	return $allcaps;
+}, 10, 4);

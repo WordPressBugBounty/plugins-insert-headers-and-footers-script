@@ -1,4 +1,24 @@
 <?php
+/**
+ * Sanitize script field - require unfiltered_html capability
+ * Security fix for CVE-2025-12112
+ *
+ * @param mixed $value The unsanitized value
+ * @param array $field_args Array of field parameters
+ * @param object $field The field object
+ * @return mixed Sanitized value or empty string if capability check fails
+ */
+function ihafs_sanitize_script_field( $value, $field_args, $field ) {
+	// Check if user has unfiltered_html capability
+	if ( ! current_user_can( 'unfiltered_html' ) ) {
+		// Return empty string - script will not be saved
+		return '';
+	}
+
+	// User has proper capability, allow the value
+	return $value;
+}
+
 function ihafs_post_list_arr($post_type = 'post', $per_page = 10){
 	$arr = array();
 
@@ -54,7 +74,8 @@ if(!function_exists('ihafs_meta_boxes')){
 			'id'                 => $prefix.'code',
 			'name'        		 => __( 'Script', 'ihafs' ),
 			'type'        		 => 'textarea_code',
-			'description'		=> __('Put the Script / Style you want to load in header/footer', 'ihafs')
+			'description'		=> __('Put the Script / Style you want to load in header/footer', 'ihafs'),
+			'sanitization_cb'    => 'ihafs_sanitize_script_field',
 		) );
 
 		$meta_box->add_field( array(

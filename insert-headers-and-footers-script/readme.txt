@@ -1,10 +1,10 @@
 === Insert Headers and Footers Code - HT Script ===
-Contributors: hasthemes, htplugins, devitemsllc, tarekht, zenaulislam, aslamhasib, alberuni-azad
+Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib
 Tags: Google Analytics,  inject code, inject html, inject javascript, Facebook pixel
 Author URI: https://hasthemes.com/
 Requires at least: 5.0
-Tested up to: 6.8
-Stable tag: 1.1.6
+Tested up to: 6.9
+Stable tag: 1.1.7
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
@@ -76,6 +76,10 @@ Needs assistance to use this plugin?
 Feel free to [Contact us](https://hasthemes.com/contact-us/)
 
 == Changelog ==
+
+= Version: 1.1.7 - Date: 30 Oct 2025 =
+* Fixed: Restricted script access to users with proper capabilities.
+* Fixed: Sanitization callback to validate user capabilities before saving scripts.
 
 = Version: 1.1.6 - Date: 22 July 2025 =
 * Added: Status column in post list to show script status
