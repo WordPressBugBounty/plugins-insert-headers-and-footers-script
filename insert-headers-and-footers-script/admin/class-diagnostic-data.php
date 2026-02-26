@@ -79,14 +79,14 @@ if ( ! class_exists( 'HTScript_Diagnostic_Data' ) ) {
             $this->project_name = 'HT Script';
             $this->project_type = 'wordpress-plugin';
             $this->project_version = IHAFS_VERSION;
-            $this->data_center = 'https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjAwNTY1MDYzZTA0MzM1MjY1NTUzNyI_3D_pc';
+            $this->data_center = 'https://n8n.aslamhasib.com/webhook/484fe1ab-9cdf-4318-8b6f-2b218ac47009';
             $this->privacy_policy = 'https://wphtmega.com/privacy-policy/';
 
             $this->project_pro_active = $this->is_pro_plugin_active();
             $this->project_pro_installed = $this->is_pro_plugin_installed();
             $this->project_pro_version = $this->get_pro_version();
 
-            if( get_option('ihafs_diagnostic_data_agreed') === 'yes' || get_option('ihafs_diagnostic_data_notice') === 'no' ){
+            if ( get_option( 'ihafs_diagnostic_data_agreed' ) === 'yes' || get_option( 'ihafs_diagnostic_data_notice' ) === 'no' ) {
                 return;
             }
 
@@ -499,7 +499,93 @@ if ( ! class_exists( 'HTScript_Diagnostic_Data' ) ) {
         /**
          * Show notices.
          */
+        /**
+         * Check if this plugin should show the diagnostic data notice.
+         * Returns false if already agreed, dismissed, or another HT plugin takes priority.
+         */
+        public function should_show_notice() {
+            if ( get_option( 'ihafs_diagnostic_data_agreed' ) === 'yes' || get_option( 'ihafs_diagnostic_data_notice' ) === 'no' ) {
+                return false;
+            }
+
+            $sibling_plugins = array(
+                'woolentor-addons/woolentor_addons_elementor.php' => array(
+                    'agreed'  => 'woolentor_diagnostic_data_agreed',
+                    'notice'  => 'woolentor_diagnostic_data_notice',
+                ),
+                'ht-mega-for-elementor/htmega_addons_elementor.php' => array(
+                    'agreed'  => 'htmega_diagnostic_data_agreed',
+                    'notice'  => 'htmega_diagnostic_data_notice',
+                ),
+                'ht-easy-google-analytics/ht-easy-google-analytics.php' => array(
+                    'agreed'  => 'htga4_diagnostic_data_agreed',
+                    'notice'  => 'htga4_diagnostic_data_notice',
+                ),
+                'ht-contactform/contact-form-widget-elementor.php' => array(
+                    'agreed'  => 'ht_contactform_diagnostic_data_agreed',
+                    'notice'  => 'ht_contactform_diagnostic_data_notice',
+                ),
+                'hashbar-wp-notification-bar/init.php' => array(
+                    'agreed'  => 'hashbar_diagnostic_data_agreed',
+                    'notice'  => 'hashbar_diagnostic_data_notice',
+                ),
+                'support-genix-lite/support-genix-lite.php' => array(
+                    'agreed'  => 'support_genix_lite_diagnostic_data_agreed',
+                    'notice'  => 'support_genix_lite_diagnostic_data_notice',
+                ),
+                'pixelavo/pixelavo.php' => array(
+                    'agreed'  => 'pixelavo_diagnostic_data_agreed',
+                    'notice'  => 'pixelavo_diagnostic_data_notice',
+                ),
+                'swatchly/swatchly.php' => array(
+                    'agreed'  => 'swatchly_diagnostic_data_agreed',
+                    'notice'  => 'swatchly_diagnostic_data_notice',
+                ),
+                'extensions-for-cf7/extensions-for-cf7.php' => array(
+                    'agreed'  => 'ht_cf7extensions_diagnostic_data_agreed',
+                    'notice'  => 'ht_cf7extensions_diagnostic_data_notice',
+                ),
+                'whols/whols.php' => array(
+                    'agreed'  => 'whols_diagnostic_data_agreed',
+                    'notice'  => 'whols_diagnostic_data_notice',
+                ),
+                'wp-plugin-manager/plugin-main.php' => array(
+                    'agreed'  => 'htpm_diagnostic_data_agreed',
+                    'notice'  => 'htpm_diagnostic_data_notice',
+                ),
+                'just-tables/just-tables.php' => array(
+                    'agreed'  => 'justtables_diagnostic_data_agreed',
+                    'notice'  => 'justtables_diagnostic_data_notice',
+                ),
+                'really-simple-google-tag-manager/really-simple-google-tag-manager.php' => array(
+                    'agreed'  => 'simple_googletag_diagnostic_data_agreed',
+                    'notice'  => 'simple_googletag_diagnostic_data_notice',
+                ),
+            );
+
+            foreach ( $sibling_plugins as $plugin_slug => $options ) {
+                if ( get_option( $options['agreed'] ) === 'yes' ) {
+                    update_option( 'ihafs_diagnostic_data_agreed', 'yes' );
+                    update_option( 'ihafs_diagnostic_data_notice', 'no' );
+                    return false;
+                }
+            }
+
+            // Ensure only one HT plugin shows the diagnostic notice per request.
+            global $ht_diagnostic_notice_owner;
+            if ( isset( $ht_diagnostic_notice_owner ) && $ht_diagnostic_notice_owner !== 'ihafs' ) {
+                return false;
+            }
+            $ht_diagnostic_notice_owner = 'ihafs';
+
+            return true;
+        }
+
         private function show_notices() {
+            if ( ! $this->should_show_notice() ) {
+                return;
+            }
+
             if ( 'no' === $this->is_capable_user() ) {
                 return;
             }
@@ -516,37 +602,23 @@ if ( ! class_exists( 'HTScript_Diagnostic_Data' ) ) {
             $ajax_nonce = wp_create_nonce( "ihafs-diagnostic-data-ajax-request" );
             $ajax_url = admin_url( 'admin-ajax.php' );
 
-            $message_l1 = sprintf(
-                /*
-                * translators: %1$s: project name
-                * translators: %2$s: strong tag start
-                * translators: %3$s: strong tag end
-                * translators: %4$s: a tag start
-                * translators: %5$s: a tag end
-                */
-                esc_html__( 'At %2$s%1$s%3$s, we prioritize continuous improvement and compatibility. To achieve this, we gather non-sensitive diagnostic information and details about plugin usage. This includes your site\'s URL, the versions of WordPress and PHP you\'re using, and a list of your installed plugins and themes. We also require your email address to provide you with exclusive discount coupons and updates. This data collection is crucial for ensuring that %2$s%1$s%3$s remains up-to-date and compatible with the most widely-used plugins and themes. Rest assured, your privacy is our priority – no spam, guaranteed. %4$sPrivacy Policy%5$s', 'ihafs' ), esc_html( $this->project_name ), '<strong>', '</strong>', '<a target="_blank" href="' . esc_url( $this->privacy_policy ) . '">', '</a>', '<h4 class="ihafs-diagnostic-data-title">', '</h4>' 
-            );
             $message_l2 = sprintf(
                 /*
                 * translators: %1$s: a tag start
                 * translators: %2$s: a tag end
                 */
-                esc_html__( 'Server information (Web server, PHP version, MySQL version), WordPress information, site name, site URL, number of plugins, number of users, your name, and email address. You can rest assured that no sensitive data will be collected or tracked. %1$sLearn more%2$s.', 'ihafs' ), '<a target="_blank" href="' . esc_url( $this->privacy_policy ) . '">', '</a>'
+                esc_html__( 'Server information (Web server, PHP version, MySQL version), WordPress information, site name, site URL, number of plugins, number of users, your name, and email address. You can rest assured that no sensitive data will be collected or tracked. %1$sPrivacy Policy%2$s', 'ihafs' ), '<a target="_blank" href="' . esc_url( $this->privacy_policy ) . '">', '</a>'
             );
 
             $button_text_1 = esc_html__( 'Count Me In', 'ihafs' );
             $button_link_1 = add_query_arg( array( 'ihafs_diagnostic_data_agreed' => 1, 'action' => 'ihafs_diagnostic_data', '_wpnonce' => $ajax_nonce ) );
 
-            $button_text_2 = esc_html__( 'No, Thanks', 'ihafs' );
+            $button_text_2 = esc_html__( 'No thanks', 'ihafs' );
             $button_link_2 = add_query_arg( array( 'ihafs_diagnostic_data_agreed' => 0, 'action' => 'ihafs_diagnostic_data', '_wpnonce' => $ajax_nonce ) );
             ?>
-            <div class="ihafs-diagnostic-data-style"><style>.ihafs-diagnostic-data-notice,.woocommerce-embed-page .ihafs-diagnostic-data-notice{padding-top:.75em;padding-bottom:.75em;}.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-buttons,.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-list,.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-message{padding:.25em 2px;margin:0;}.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-list{display:none;color:#646970;}.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-buttons{padding-top:.75em;}.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-buttons .button{margin-right:5px;box-shadow:none;}.ihafs-diagnostic-data-loading{position:relative;}.ihafs-diagnostic-data-loading::before{position:absolute;content:"";width:100%;height:100%;top:0;left:0;background-color:rgba(255,255,255,.5);z-index:999;}.ihafs-diagnostic-data-disagree{border-width:0px !important;background-color: transparent!important; padding: 0!important;}h4.ihafs-diagnostic-data-title {margin: 0 0 10px 0;font-size: 1.04em;font-weight: 600;}</style></div>
-            <div class="ihafs-diagnostic-data-notice notice notice-success">
-                <h4 class="ihafs-diagnostic-data-title"><?php echo sprintf(
-                    /* translators: %1$s: project name */
-                    esc_html__('🌟 Enhance Your %1$s Experience as a Valued Contributor!','ihafs'), esc_html( $this->project_name )
-                ); ?></h4>
-                <p class="ihafs-diagnostic-data-message"><?php echo wp_kses_post( $message_l1 ); ?></p>
+            <div class="ihafs-diagnostic-data-style"><style>.ihafs-diagnostic-data-notice,.woocommerce-embed-page .ihafs-diagnostic-data-notice{padding-top:.75em;padding-bottom:.75em;}.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-buttons,.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-list,.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-message{padding:.25em 2px;margin:0;}.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-list{display:none;color:#646970;}.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-buttons{padding-top:.75em;}.ihafs-diagnostic-data-notice .ihafs-diagnostic-data-buttons .button{margin-right:5px;box-shadow:none;}.ihafs-diagnostic-data-loading{position:relative;}.ihafs-diagnostic-data-loading::before{position:absolute;content:"";width:100%;height:100%;top:0;left:0;background-color:rgba(255,255,255,.5);z-index:999;}.ihafs-diagnostic-data-disagree{border-width:0px !important;background-color: transparent!important; padding: 0!important;}.ihafs-diagnostic-data-list-toogle{cursor:pointer;color:#2271b1;text-decoration:none;}</style></div>
+            <div class="ihafs-diagnostic-data-notice notice notice-info">
+                <p class="ihafs-diagnostic-data-message"><?php echo wp_kses_post( sprintf( esc_html__( 'Want to help make %2$s%1$s%3$s even more awesome? Allow %1$s to collect diagnostic data and usage information. (%4$swhat we collect%5$s)', 'ihafs' ), esc_html( $this->project_name ), '<strong>', '</strong>', '<a href="#" class="ihafs-diagnostic-data-list-toogle">', '</a>' ) ); ?></p>
                 <p class="ihafs-diagnostic-data-list"><?php echo wp_kses_post( $message_l2 ); ?></p>
                 <p class="ihafs-diagnostic-data-buttons">
                     <a href="<?php echo esc_url( $button_link_1 ); ?>" class="ihafs-diagnostic-data-button ihafs-diagnostic-data-agree button button-primary"><?php echo esc_html( $button_text_1 ); ?></a>

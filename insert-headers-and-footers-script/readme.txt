@@ -4,7 +4,7 @@ Tags: Google Analytics,  inject code, inject html, inject javascript, Facebook p
 Author URI: https://hasthemes.com/
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
@@ -76,6 +76,9 @@ Needs assistance to use this plugin?
 Feel free to [Contact us](https://hasthemes.com/contact-us/)
 
 == Changelog ==
+
+= Version: 1.1.8 - Date: 26 Feb 2026 =
+* Improved: Admin notice display.
 
 = Version: 1.1.7 - Date: 30 Oct 2025 =
 * Fixed: Restricted script access to users with proper capabilities.
