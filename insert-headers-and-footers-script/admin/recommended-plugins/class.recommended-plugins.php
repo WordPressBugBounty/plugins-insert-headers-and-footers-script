@@ -117,6 +117,7 @@ class HTRP_Recommended_Plugins {
         }
 
         $localize_vars['ajaxurl'] = admin_url('admin-ajax.php');
+        $localize_vars['nonce'] = wp_create_nonce( 'ihafs_plugin_activation' );
         $localize_vars['text_domain'] = sanitize_title_with_dashes( 'ihafs' );
         $localize_vars['buttontxt'] = array(
             'buynow'     => esc_html__( 'Buy Now', 'ihafs' ),
@@ -388,6 +389,8 @@ class HTRP_Recommended_Plugins {
      * @return [JSON]
      */
     public function plugin_activation() {
+
+        check_ajax_referer( 'ihafs_plugin_activation', 'nonce' );
 
         if ( ! current_user_can( 'install_plugins' ) || ! isset( $_POST['location'] ) || ! $_POST['location'] ) {
             wp_send_json_error(

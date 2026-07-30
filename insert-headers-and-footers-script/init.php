@@ -3,7 +3,7 @@
  * Plugin Name: Insert Headers and Footers Code - HT Script
  * Plugin URI: https://htplugins.com/
  * Description: This plugin allow allow you to insert script in headers and footers
- * Version: 1.1.8
+ * Version: 1.1.9
  * Author: HasThemes
  * Author URI: https://hasthemes.com/
  * Text Domain: ihafs
@@ -11,7 +11,7 @@
 */
 
 // define path
-define( 'IHAFS_VERSION', '1.1.8' );
+define( 'IHAFS_VERSION', '1.1.9' );
 define( 'IHAFS_URI', plugins_url('', __FILE__) );
 define( 'IHAFS_DIR', dirname( __FILE__ ) );
 

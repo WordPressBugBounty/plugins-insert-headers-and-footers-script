@@ -91,6 +91,7 @@
                     type: 'POST',
                     data: {
                         action   : htrp_params.text_domain+'_ajax_plugin_activation',
+                        nonce    : htrp_params.nonce,
                         location : $plugindata['location'],
                     },
                 } ).done( function( result ) {
@@ -130,6 +131,7 @@
                 type: 'POST',
                 data: {
                     action   : htrp_params.text_domain+'_ajax_plugin_activation',
+                    nonce    : htrp_params.nonce,
                     location : $plugindata['location'],
                 },
             }).done( function( response ) {
