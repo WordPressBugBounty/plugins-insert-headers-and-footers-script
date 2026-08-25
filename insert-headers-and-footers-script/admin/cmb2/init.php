@@ -8,8 +8,9 @@
  * @license      GPL-2.0+
  * @link         https://cmb2.io
  *
- * Plugin Name:  CMB2
- * Plugin URI:   https://github.com/CMB2/CMB2
+ * Bundled library, not a standalone plugin — deliberately has no WP plugin-header
+ * "Name" field, so WP's plugin scanner doesn't list this file as its own entry.
+ * Project URI:  https://github.com/CMB2/CMB2
  * Description:  CMB2 will create metaboxes and forms with custom fields that will blow your mind.
  * Author:       CMB2 team
  * Author URI:   https://cmb2.io

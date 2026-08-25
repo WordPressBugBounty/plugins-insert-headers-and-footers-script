@@ -3,7 +3,7 @@
  * Plugin Name: Insert Headers and Footers Code - HT Script
  * Plugin URI: https://htplugins.com/
  * Description: This plugin allow allow you to insert script in headers and footers
- * Version: 1.1.9
+ * Version: 1.1.10
  * Author: HasThemes
  * Author URI: https://hasthemes.com/
  * Text Domain: ihafs
@@ -11,13 +11,13 @@
 */
 
 // define path
-define( 'IHAFS_VERSION', '1.1.9' );
+define( 'IHAFS_VERSION', '1.1.10' );
 define( 'IHAFS_URI', plugins_url('', __FILE__) );
 define( 'IHAFS_DIR', dirname( __FILE__ ) );
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 $ihafs_pro_active = false;
-if(is_plugin_active( 'insert-headers-and-footers-script-pro/init.php' )){
+if(is_plugin_active( 'ht-script-pro/init.php' )){
 	$ihafs_pro_active = true;
 }
 
@@ -28,6 +28,8 @@ include_once( IHAFS_DIR. '/admin/functions.php');
 
 if(is_admin()){
 	include_once( IHAFS_DIR. '/admin/class-diagnostic-data.php');
+	include_once( IHAFS_DIR. '/admin/class-api.php');
+	include_once( IHAFS_DIR. '/admin/class-dashboard-widget.php');
 }
 
 add_action('init', function() {
@@ -35,7 +37,7 @@ add_action('init', function() {
 		include_once( IHAFS_DIR. '/admin/recommended-plugins/recommendations.php');
 		include_once( IHAFS_DIR. '/admin/class-rating-notice.php');
 	}
-});
+}, 20); // after ihafs_load_textdomain() (default priority 10) so esc_html__() calls in here don't fire pre-textdomain-load
 add_action('admin_head', function() {
 	if(get_option('ihafs_rating_already_rated', false)) {
 		return;

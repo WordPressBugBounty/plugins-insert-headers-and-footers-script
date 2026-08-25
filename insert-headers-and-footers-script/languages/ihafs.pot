@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Insert Headers and Footers Script\n"
+"Project-Id-Version: Insert Headers and Footers Code - HT Script\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-17 11:35+0000\n"
+"POT-Creation-Date: 2026-08-25 11:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,33 +13,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.0; wp-5.2.1"
+"X-Loco-Version: 2.8.8; wp-7.1; php-8.4.18\n"
+"X-Domain: ihafs"
 
 #. %s: Number of installations.
-#: admin/recommended-plugins/class.recommended-plugins.php:300
+#: admin/recommended-plugins/class.recommended-plugins.php:317
 #, php-format
 msgid "%s Active Installations"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:245
+#: admin/recommended-plugins/class.recommended-plugins.php:262
 msgid "Activate"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:126
-#: admin/recommended-plugins/class.recommended-plugins.php:256
+#: admin/recommended-plugins/class.recommended-plugins.php:127
+#: admin/recommended-plugins/class.recommended-plugins.php:273
 msgid "Activated"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:125
+#: admin/recommended-plugins/class.recommended-plugins.php:126
 msgid "Activating.."
 msgstr ""
 
-#: inc/metabox.php:61
+#: inc/metabox.php:86
 msgid "Active"
 msgstr ""
 
 #. %s: Number of millions.
-#: admin/recommended-plugins/class.recommended-plugins.php:374
+#: admin/recommended-plugins/class.recommended-plugins.php:437
 #, php-format
 msgctxt "Active plugin installations"
 msgid "%s+ Million"
@@ -47,12 +48,12 @@ msgid_plural "%s+ Million"
 msgstr[0] ""
 msgstr[1] ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:378
+#: admin/recommended-plugins/class.recommended-plugins.php:441
 msgctxt "Active plugin installations"
 msgid "Less Than 10"
 msgstr ""
 
-#: inc/metabox.php:64
+#: inc/metabox.php:89
 msgid "Active/Inactive the script"
 msgstr ""
 
@@ -60,7 +61,7 @@ msgstr ""
 msgid "Add New Script"
 msgstr ""
 
-#: inc/metabox.php:30
+#: inc/metabox.php:54
 msgid ""
 "After Body - The script will be placed just below the &lt;body&gt; start tag."
 " <br><span>This option may not be compatible with your current theme.</span> "
@@ -79,43 +80,21 @@ msgstr ""
 msgid "Are you cheating?"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:144
-msgid ""
-"Are you getting frustrated with WooCommerce’s current way of presenting the "
-"variants for your products? Well, say goodbye to dropdowns and start showing "
-"the product variations in a whole new light with Swatchly."
+#: admin/templates/dashboard-widget.php:91
+msgid "Blog"
 msgstr ""
 
-#. %1$s: project name
-#. %2$s: strong tag start
-#. %3$s: strong tag end
-#. %4$s: a tag start
-#. %5$s: a tag end
-#: admin/class-diagnostic-data.php:527
-#, php-format
-msgid ""
-"At %2$s%1$s%3$s, we prioritize continuous improvement and compatibility. To "
-"achieve this, we gather non-sensitive diagnostic information and details "
-"about plugin usage. This includes your site's URL, the versions of WordPress "
-"and PHP you're using, and a list of your installed plugins and themes. We "
-"also require your email address to provide you with exclusive discount "
-"coupons and updates. This data collection is crucial for ensuring that "
-"%2$s%1$s%3$s remains up-to-date and compatible with the most widely-used "
-"plugins and themes. Rest assured, your privacy is our priority – no spam, "
-"guaranteed. %4$sPrivacy Policy%5$s"
-msgstr ""
-
-#: init.php:146 admin/recommended-plugins/class.recommended-plugins.php:122
-#: admin/recommended-plugins/class.recommended-plugins.php:233
-#: admin/recommended-plugins/class.recommended-plugins.php:287
+#: init.php:150 admin/recommended-plugins/class.recommended-plugins.php:123
+#: admin/recommended-plugins/class.recommended-plugins.php:250
+#: admin/recommended-plugins/class.recommended-plugins.php:304
 msgid "Buy Now"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:273
+#: admin/recommended-plugins/class.recommended-plugins.php:290
 msgid "By "
 msgstr ""
 
-#: inc/metabox.php:69
+#: inc/metabox.php:94
 msgid "Condition"
 msgstr ""
 
@@ -123,71 +102,37 @@ msgstr ""
 msgid "Conditon"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:180
-msgid ""
-"Contact Form7 Extensions plugin is a fantastic WordPress plugin that "
-"enriches the functionalities of Contact Form 7.This all-in-one WordPress "
-"plugin will help you turn any contact page into a well-organized, engaging "
-"tool for communicating with your website visitors by providing tons of "
-"advanced features like drag and drop file upload, repeater field, trigger "
-"error for already submitted forms, popup form response, country flags and "
-"dial codes with a telephone input field and acceptance field, etc. in "
-"addition to its basic features."
+#: admin/recommended-plugins/recommendations.php:69
+#: admin/recommended-plugins/recommendations.php:136
+msgid "CookieRay – Cookie Banner for Cookie Consent (GDPR/CCPA Compliant)"
 msgstr ""
 
-#: admin/class-diagnostic-data.php:537
+#: admin/class-diagnostic-data.php:613
 msgid "Count Me In"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:322
-msgid "Coupon Zen"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:316
-msgid "DataCaptia"
+#: admin/recommended-plugins/recommendations.php:141
+msgid "CourseGlade LMS – Online Course & eLearning Platform"
 msgstr ""
 
 #: admin/class-rating-notice.php:262
 msgid "Dismiss this notice."
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:258
-msgid "Docus Pro"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:310
-msgid "Docus – YouTube Video Playlist"
+#: admin/templates/dashboard-widget.php:97
+msgid "Documentation"
 msgstr ""
 
 #: inc/custom-posts.php:19
 msgid "Edit Script"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:261
-msgid ""
-"Embedding a YouTube playlist into your website plays a vital role to curate "
-"your content into several categories and make your web content more engaging "
-"and popular by keeping the visitors on your website for a longer period."
-msgstr ""
-
-#: inc/metabox.php:92
+#: inc/metabox.php:117
 msgid "Exclude Pages <span class=\"pro\">(Pro)</span>"
 msgstr ""
 
-#: inc/metabox.php:100
+#: inc/metabox.php:125
 msgid "Exclude Posts <span class=\"pro\">(Pro)</span>"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:68
-msgid "Extensions For CF7"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:177
-msgid "Extensions For CF7 Pro"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:286
-msgid "Faster YouTube Embed"
 msgstr ""
 
 #: inc/custom-posts.php:25
@@ -198,43 +143,25 @@ msgstr ""
 msgid "Filter items list"
 msgstr ""
 
-#: inc/metabox.php:31 inc/metabox.php:36
+#: inc/metabox.php:55 inc/metabox.php:60
 msgid ""
 "Footer - The Script will be placed near the bottom of the &lt;body&gt; "
 "section."
 msgstr ""
 
-#: inc/metabox.php:80
+#: inc/metabox.php:105
 msgid "Full Website"
 msgstr ""
 
-#: init.php:143
+#: init.php:147
 msgid "Go Premium!"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:231
-msgid "Google Place Review"
+#: admin/recommended-plugins/recommendations.php:59
+msgid "HashBar – Announcement, Notification Bar & Popup Campaign"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:50
-msgid "HashBar"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:189
-msgid ""
-"HashBar is a WordPress Notification / Alert / Offer Bar plugin which allows "
-"you to create unlimited notification bars to notify your customers. This "
-"plugin has option to show email subscription form (sometimes it increases up "
-"to 500% email subscriber), Offer text and buttons about your promotions. "
-"This plugin has the options to add unlimited background colors and images to "
-"make your notification bar more professional."
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:186
-msgid "HashBar Pro"
-msgstr ""
-
-#: admin/recommended-plugins/class.recommended-plugins.php:230
+#: admin/recommended-plugins/class.recommended-plugins.php:247
 msgid "HasTheme"
 msgstr ""
 
@@ -242,112 +169,55 @@ msgstr ""
 msgid "HasThemes"
 msgstr ""
 
-#: inc/metabox.php:29 inc/metabox.php:35
+#: admin/class-dashboard-widget.php:27
+msgid "HasThemes Stories"
+msgstr ""
+
+#: inc/metabox.php:53 inc/metabox.php:59
 msgid "Header - The Script will be placed within the &lt;head&gt; section. "
 msgstr ""
 
-#: inc/metabox.php:42
+#: inc/metabox.php:66
 msgid "Headers and Footers Script Options"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:249
-msgid "HT Click To Call"
+#: admin/recommended-plugins/recommendations.php:131
+msgid "HT Contact Form – Drag & Drop Form Builder for WordPress"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:62
-msgid "HT Contact Form 7"
+#: admin/recommended-plugins/recommendations.php:126
+msgid "HT Easy GA4 – Google Analytics WordPress Plugin"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:280
-msgid "HT Feed"
+#: admin/recommended-plugins/recommendations.php:49
+msgid "HT Mega Addons for Elementor – Elementor Widgets & Template Builder"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:44
-msgid "HT Mega"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:132
-msgid "HT Mega Pro"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:80
-msgid "HT Menu"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:213
-msgid "HT Menu Pro"
-msgstr ""
-
-#: init.php:43 inc/custom-posts.php:11
+#: init.php:47 inc/custom-posts.php:11
 msgid "HT Script"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:204
-msgid "HT Script Pro"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:56
+#: admin/recommended-plugins/recommendations.php:111
 msgid "HT Slider For Elementor"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:222
-msgid "HT Slider Pro For Elementor"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:225
-msgid ""
-"HT Slider Pro is a plugin to create a slider for WordPress websites easily "
-"using the Elementor page builder. 80+ prebuild slides/templates are included "
-"in this plugin. There is the option to create a post slider, WooCommerce "
-"product slider, Video slider, image slider, etc. Fullscreen, full width and "
-"box layout option are included."
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:334
-msgid "HT Social Share"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:74
-msgid "HT WPForms"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:252
-msgid ""
-"HT – Click to Call is a lightweight WordPress plugin that allows you to add "
-"a floating click to call button on your website. It will offer your website "
-"visitors an opportunity to call your business immediately at the right "
-"moment, especially when they are interested in your products or services and "
-"seeking more information."
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:135
-msgid ""
-"HTMega is an absolute addon for elementor that includes 80+ elements & 360 "
-"Blocks with unlimited variations. HT Mega brings limitless possibilities. "
-"Embellish your site with the elements of HT Mega."
 msgstr ""
 
 #. Author URI of the plugin
 msgid "https://hasthemes.com/"
 msgstr ""
 
-#: init.php:53
-msgid "I already did"
+#. URI of the plugin
+msgid "https://htplugins.com/"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:234
-msgid ""
-"If you are searching for a modern and excellent google places review "
-"WordPress plugin to showcase reviews from Google Maps and strengthen trust "
-"between you and your site visitors, look no further than HT Google Place "
-"Review"
+#: init.php:57
+msgid "I already did"
 msgstr ""
 
 #: inc/custom-posts.php:12
 msgid "ihafs"
 msgstr ""
 
-#: inc/metabox.php:62
+#: inc/metabox.php:87
 msgid "Inactive"
 msgstr ""
 
@@ -355,25 +225,15 @@ msgstr ""
 msgid "Insert Headers and Footers Code - HT Script"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:207
-msgid ""
-"Insert Headers and Footers Code allows you to insert Google Analytics, "
-"Facebook Pixel, custom CSS, custom HTML, JavaScript code to your website "
-"header and footer without modifying your theme code.This plugin has the "
-"option to add any custom code to your theme in one place, no need to edit "
-"the theme code. It will save your time and remove the hassle for the theme "
-"update."
-msgstr ""
-
 #: inc/custom-posts.php:29
 msgid "Insert into item"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:251
+#: admin/recommended-plugins/class.recommended-plugins.php:268
 msgid "Install Now"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:124
+#: admin/recommended-plugins/class.recommended-plugins.php:125
 msgid "Installing.."
 msgstr ""
 
@@ -381,53 +241,26 @@ msgstr ""
 msgid "Invalid option."
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:104
-msgid "JustTables"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:162
+#: admin/recommended-plugins/recommendations.php:116
 msgid ""
-"JustTables is an incredible WordPress plugin that lets you showcase all your "
-"WooCommerce products in a sortable and filterable table view. It allows your "
-"customers to easily navigate through different attributes of the products "
-"and compare them on a single page. This plugin will be of great help if you "
-"are looking for an easy solution that increases the chances of landing a "
-"sale on your online store."
+"Kelune CRM – Contact Management, Email Marketing, Newsletter & Marketing "
+"Automation"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:159
-msgid "JustTables Pro"
-msgstr ""
-
-#: init.php:51
+#: init.php:55
 msgid "Maybe Later"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:295
+#: admin/recommended-plugins/class.recommended-plugins.php:312
 msgid "More Details"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:110
-msgid "Multi Currency"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:168
-msgid "Multi Currency Pro for WooCommerce"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:171
-msgid ""
-"Multi-Currency Pro for WooCommerce is a prominent currency switcher plugin "
-"for WooCommerce. This plugin allows your website or online store visitors to "
-"switch to their preferred currency or their country’s currency."
 msgstr ""
 
 #: inc/custom-posts.php:18
 msgid "New Script"
 msgstr ""
 
-#: admin/class-diagnostic-data.php:540
-msgid "No, Thanks"
+#: admin/class-diagnostic-data.php:616
+msgid "No thanks"
 msgstr ""
 
 #: inc/custom-posts.php:23
@@ -438,83 +271,75 @@ msgstr ""
 msgid "Not found in Trash"
 msgstr ""
 
-#: init.php:49
+#: init.php:53
 msgid "Ok, you deserve it!"
 msgstr ""
 
-#: inc/metabox.php:84
+#: inc/metabox.php:109
 msgid "Only Categories <span class=\"pro\">(Pro)</span>"
 msgstr ""
 
-#: inc/metabox.php:81
+#: inc/metabox.php:106
 msgid "Only Homepage <span class=\"pro\">(Pro)</span>"
 msgstr ""
 
-#: inc/metabox.php:82
+#: inc/metabox.php:107
 msgid "Only Pages <span class=\"pro\">(Pro)</span>"
 msgstr ""
 
-#: inc/metabox.php:83
+#: inc/metabox.php:108
 msgid "Only Posts <span class=\"pro\">(Pro)</span>"
 msgstr ""
 
-#: inc/metabox.php:85
+#: inc/metabox.php:110
 msgid "Only Tags  <span class=\"pro\">(Pro)</span>"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:268
-msgid "Others"
+#: admin/recommended-plugins/recommendations.php:106
+msgid "Other Plugins"
 msgstr ""
 
 #: inc/custom-posts.php:14
 msgid "Parent Script:"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:396
+#: admin/recommended-plugins/recommendations.php:74
+msgid "Pixelavo – Server Side Tracking & Pixel + AI Ads Tools"
+msgstr ""
+
+#: admin/recommended-plugins/class.recommended-plugins.php:461
 msgid "Plugin Not Found"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:416
+#: admin/recommended-plugins/class.recommended-plugins.php:481
 msgid "Plugin Successfully Activated"
 msgstr ""
 
-#: admin/recommended-plugins/class.recommended-plugins.php:123
+#: admin/recommended-plugins/class.recommended-plugins.php:124
 msgid "Preview"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:298
-msgid "Preview Link Generator"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:141
-msgid "Product Variation Swatches"
-msgstr ""
-
-#: inc/metabox.php:53
+#: inc/metabox.php:77
 msgid "Put the Script / Style you want to load in header/footer"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:304
-msgid "QuickSwish"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:274
-msgid "Really Simple Google Tag Manager"
 msgstr ""
 
 #: admin/recommended-plugins/class.recommended-plugins.php:71
 msgid "Recommendations"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:31
-msgid "Recommended"
+#: admin/recommended-plugins/recommendations.php:35
+msgid "Recommended Plugins"
+msgstr ""
+
+#: admin/recommended-plugins/recommendations.php:98
+msgid "Recurio – Ultimate Subscription for WooCommerce"
 msgstr ""
 
 #: inc/custom-posts.php:27
 msgid "Remove featured image"
 msgstr ""
 
-#: inc/metabox.php:51
+#: inc/metabox.php:75
 msgid "Script"
 msgstr ""
 
@@ -543,46 +368,57 @@ msgstr ""
 msgid "Search Script"
 msgstr ""
 
-#: inc/metabox.php:95
+#: inc/metabox.php:120
 msgid "Select the pages you want to exclude"
 msgstr ""
 
-#: inc/metabox.php:103
+#: inc/metabox.php:128
 msgid "Select the posts you want to exclude"
 msgstr ""
 
 #. %1$s: a tag start
 #. %2$s: a tag end
-#: admin/class-diagnostic-data.php:534
+#: admin/class-diagnostic-data.php:610
 #, php-format
 msgid ""
 "Server information (Web server, PHP version, MySQL version), WordPress "
 "information, site name, site URL, number of plugins, number of users, your "
 "name, and email address. You can rest assured that no sensitive data will be "
-"collected or tracked. %1$sLearn more%2$s."
+"collected or tracked. %1$sPrivacy Policy%2$s"
 msgstr ""
 
 #: inc/custom-posts.php:26
 msgid "Set featured image"
 msgstr ""
 
-#: init.php:115
+#: init.php:119
 msgid "Settings"
 msgstr ""
 
-#: inc/metabox.php:77
+#: admin/recommended-plugins/recommendations.php:42
+#: admin/recommended-plugins/recommendations.php:88
+msgid "ShopLentor – All-in-One WooCommerce Growth & Store Enhancement Plugin"
+msgstr ""
+
+#: inc/metabox.php:102
 msgid "Show On"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:328
-msgid "Sirve – Simple Directory Listing"
-msgstr ""
-
-#: inc/metabox.php:58
+#: inc/metabox.php:83 admin/functions.php:11
 msgid "Status"
 msgstr ""
 
-#: init.php:46
+#: admin/templates/dashboard-widget.php:103
+msgid "Support"
+msgstr ""
+
+#: admin/recommended-plugins/recommendations.php:54
+msgid ""
+"Support Genix – Helpdesk, AI Chatbot, Knowledge Base & Customer Support "
+"Ticketing System"
+msgstr ""
+
+#: init.php:50
 msgid ""
 "Thank you for choosing HT Script to insert script into header and footer of "
 "your site!"
@@ -591,7 +427,7 @@ msgstr ""
 #. %1$s: project name
 #. %2$s: strong tag start
 #. %3$s: strong tag end
-#: admin/class-diagnostic-data.php:570
+#: admin/class-diagnostic-data.php:642
 #, php-format
 msgid "Thank you very much for supporting %2$s%1$s%3$s."
 msgstr ""
@@ -609,7 +445,7 @@ msgstr ""
 msgid "Update Script"
 msgstr ""
 
-#: init.php:145
+#: init.php:149
 msgid "Upgrade to premium version to unlock this feature!"
 msgstr ""
 
@@ -625,90 +461,28 @@ msgstr ""
 msgid "View Script"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:240
-msgid "Was This Helpful?"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:243
+#: admin/class-diagnostic-data.php:621
+#, php-format
 msgid ""
-"Was this helpful? is a WordPress plugin that allows you to take visitors' "
-"feedback on your post/pages or any article. A visitor can share his feedback "
-"by like/dislike/yes/no"
+"Want to help make %2$s%1$s%3$s even more awesome? Allow %1$s to collect "
+"diagnostic data and usage information. (%4$swhat we collect%5$s)"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:92
-msgid "WC Builder"
+#: admin/recommended-plugins/recommendations.php:93
+msgid "Whols – Wholesale Prices and B2B Store Solution for WooCommerce"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:292
-msgid "WC Sales Notification"
+#: admin/recommended-plugins/recommendations.php:81
+msgid "WooCommerce"
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:98
-msgid "Whols"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:153
-msgid ""
-"Whols is an outstanding WordPress plugin for WooCommerce that allows store "
-"owners to set wholesale prices for the products of their online stores. This "
-"plugin enables you to show special wholesale prices to the wholesaler. Users "
-"can easily request to become a wholesale customer by filling out a simple "
-"online registration form. Once the registration is complete, the owner of "
-"the store will be able to review the request and approve the request either "
-"manually or automatically."
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:150
-msgid "Whols Pro"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:38
-msgid "WooLentor"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:126
-msgid ""
-"WooLentor is one of the most popular WooCommerce Elementor Addons on "
-"WordPress.org. It has been downloaded more than 672,148 times and 60,000 "
-"stores are using WooLentor plugin. Why not you?"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:123
-msgid "WooLentor Pro"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:216
-msgid "WordPress Mega Menu Builder for Elementor"
-msgstr ""
-
-#: init.php:47
+#: init.php:51
 msgid ""
 "Would you mind doing us a huge favor by providing your feedback on WordPress?"
 " Your support helps us spread the word and greatly boosts our motivation."
 msgstr ""
 
-#: admin/recommended-plugins/recommendations.php:86
-msgid "WP Plugin Manager"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:195
-msgid "WP Plugin Manager Pro"
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:198
-msgid ""
-"WP Plugin Manager Pro is a specialized WordPress Plugin that helps you to "
-"deactivate unnecessary WordPress Plugins page wise and boosts the speed of "
-"your WordPress site to improve the overall site performance."
-msgstr ""
-
-#: admin/recommended-plugins/recommendations.php:117
-msgid "You May Also Like"
-msgstr ""
-
-#. %1$s: project name
-#: admin/class-diagnostic-data.php:547
-#, php-format
-msgid "🌟 Enhance Your %1$s Experience as a Valued Contributor!"
+#: admin/recommended-plugins/recommendations.php:64
+#: admin/recommended-plugins/recommendations.php:121
+msgid "WP Plugin Manager – Deactivate plugins per page"
 msgstr ""

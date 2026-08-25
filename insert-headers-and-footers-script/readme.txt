@@ -3,8 +3,8 @@ Contributors: hasthemes, htplugins, devitemsllc, zenaulislam, aslamhasib
 Tags: Google Analytics,  inject code, inject html, inject javascript, Facebook pixel
 Author URI: https://hasthemes.com/
 Requires at least: 5.0
-Tested up to: 7.0
-Stable tag: 1.1.9
+Tested up to: 7.1
+Stable tag: 1.1.10
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
@@ -76,6 +76,11 @@ Needs assistance to use this plugin?
 Feel free to [Contact us](https://hasthemes.com/contact-us/)
 
 == Changelog ==
+
+= Version: 1.1.10 - Date: 25 August 2026 =
+* Fixed: Recommended Plugins page showing a single stacked column instead of a grid on WordPress 7.1+.
+* Fixed: A few minor issues.
+* Tested: Compatibility with the latest version of WordPress.
 
 = Version: 1.1.9 - Date: 30 July 2026 =
 * Fixed: CSRF vulnerability in the plugin activation AJAX handler by adding nonce verification.
